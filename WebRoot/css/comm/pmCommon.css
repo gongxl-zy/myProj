@@ -1,0 +1,38 @@
+th{font-weight:normal;}
+div.commDialog{padding:20px 60px 50px;}
+div.mb20{margin-bottom:20px;}
+div.mt30{margin-top:30px;}
+
+.commDialog input{width:280px;}
+.commDialog a{width:280px;}
+
+div.content_wrap {width: 1150px;height:400px;}
+div.zTreeBg {float:left;width:250px;height:400px;text-align:left;}
+div.easyui-tabs{float: right;width:900px;height:400px;margin-top: 10px;}
+ul.ztree {margin-top: 10px;border: 1px solid #617775;background: #f0f6e4;width:220px;height:385px;overflow-y:scroll;overflow-x:auto;}
+a.cellButton{font-size: 12px;padding: 3px 6px;border: 2px solid #CCC;background: #f0f6e4;margin: 0 5px;}
+
+.sys_buttons{
+	width:80%;
+	margin:10px 20px;
+	text-align:center;	
+}
+.sys_buttons a{padding:0 20px;margin: 0 20px;}
+
+.table_form{
+	margin:5px auto;
+}
+
+.table_form th{
+	height:26px;
+	padding-right:5px;
+	padding-left:5px;
+	text-align:right;
+	font-weight:100;
+	font-size: 14px;
+}
+.table_form td{
+	height:26px;
+	text-align:left;
+	font-size: 14px;
+}

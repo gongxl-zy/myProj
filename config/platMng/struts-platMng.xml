@@ -1,0 +1,24 @@
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="platMng-default" extends="struts-default">
+		<interceptors>
+			<interceptor name="accessInterceptor" class="com.adtec.fis.manage.interceptor.AccessInterceptor"></interceptor>
+			<interceptor-stack name="platMngAuctionStack">
+				<interceptor-ref name="accessInterceptor" />
+			</interceptor-stack>
+		</interceptors>
+
+		<default-interceptor-ref name="platMngAuctionStack" />
+		
+		<global-results>
+            <result name="login">/manage/frame/login.jsp</result>
+            <result name="needLogin">/manage/frame/needLogin.jsp</result>
+            <result name="noLimit" type="chain">
+				<param name="actionName">noLimit</param>  
+                <param name="namespace">/manage</param>
+			</result>
+        </global-results>
+	</package>
+</struts>
