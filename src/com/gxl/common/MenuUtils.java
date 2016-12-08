@@ -30,7 +30,7 @@ public class MenuUtils {
 	 * @return
 	 */
 	private static PmMenu getMenuTree(PmMenu menu,List<PmMenu> listAll){
-		PmMenu rtnMenu = new PmMenu(menu);
+		PmMenu rtnMenu = menu.clone();
 		for(PmMenu m : listAll){
 			if(!m.getMenuType().equals(Constants.FUNC_MENU) && CheckUtils.isNotNull(m.getUpMenuId())
 					&& m.getUpMenuId().equals(menu.getMenuId())){

@@ -13,13 +13,13 @@ import com.gxl.biz.RefreshCacheBiz;
 import com.gxl.common.Cache;
 import com.gxl.common.CheckUtils;
 import com.gxl.common.Constants;
+import com.gxl.common.ReflectUtils;
 import com.gxl.common.StringUtils;
 import com.gxl.dao.PublicDao;
 import com.gxl.entity.PFunction;
 import com.gxl.entity.PMenu;
 import com.gxl.entity.PRoleMenu;
 import com.gxl.entity.PUser;
-import com.gxl.pm.po.NewEntity;
 import com.gxl.pm.po.PmMenu;
 
 @Service(value="menuBiz")
@@ -46,7 +46,8 @@ public class MenuBizImpl implements MenuBiz{
 	
 	@Override
 	public void txOpMenu(PmMenu menu,String operSign,String opUserId) throws Exception{
-		PMenu pMenu = NewEntity.getPMenu(menu);
+		//根据子类获取全新的父类对象
+		PMenu pMenu = (PMenu) ReflectUtils.getFatherPo(menu);
 		if(operSign.equals(Constants.OP_A)){
 			pMenu.setMenuId(Uuid.build());
 			pMenu.setCreaterId(opUserId);

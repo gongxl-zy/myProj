@@ -1,6 +1,7 @@
 package com.gxl.pm.po;
 
 import com.gxl.common.Cache;
+import com.gxl.common.ReflectUtils;
 import com.gxl.entity.PFunction;
 
 public class PmFunction extends PFunction {
@@ -16,19 +17,8 @@ public class PmFunction extends PFunction {
 	public PmFunction(){
 		super();
 	}
-	public PmFunction(PFunction func){
-		super();
-		setFuncId(func.getFuncId());
-		setFuncCode(func.getFuncCode());
-		setFuncName(func.getFuncName());
-		setFuncIcon(func.getFuncIcon());
-		setFuncSort(func.getFuncSort());
-		setFuncState(func.getFuncState());
-		setFuncDesc(func.getFuncDesc());
-		setCreaterId(func.getCreaterId());
-		setCreateTime(func.getCreateTime());
-		setUpdaterId(func.getUpdaterId());
-		setUpdateTime(func.getUpdateTime());
+	public PmFunction(PFunction faObj){
+		ReflectUtils.setChildPo(this,faObj);
 	}
 
 }

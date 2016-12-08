@@ -11,10 +11,10 @@ import org.springframework.stereotype.Service;
 import com.gxl.biz.FunctionBiz;
 import com.gxl.biz.RefreshCacheBiz;
 import com.gxl.common.Constants;
+import com.gxl.common.ReflectUtils;
 import com.gxl.common.StringUtils;
 import com.gxl.dao.PublicDao;
 import com.gxl.entity.PFunction;
-import com.gxl.pm.po.NewEntity;
 import com.gxl.pm.po.PmFunction;
 
 @Service(value="functionBiz")
@@ -42,7 +42,8 @@ public class FunctionBizImpl implements FunctionBiz{
 	
 	@Override
 	public void txOpFunction(PmFunction function,String operSign,String opUserId) throws Exception{
-		PFunction pFunction = NewEntity.getPFunction(function);
+		//根据子类获取全新的父类对象
+		PFunction pFunction = (PFunction) ReflectUtils.getFatherPo(function);
 		if(operSign.equals(Constants.OP_A)){
 			pFunction.setFuncId(Uuid.build());
 			pFunction.setCreaterId(opUserId);

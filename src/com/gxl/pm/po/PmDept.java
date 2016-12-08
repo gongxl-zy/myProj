@@ -1,6 +1,7 @@
 package com.gxl.pm.po;
 
 import com.gxl.common.Cache;
+import com.gxl.common.ReflectUtils;
 import com.gxl.entity.PDept;
 
 public class PmDept extends PDept{
@@ -22,17 +23,7 @@ public class PmDept extends PDept{
 	public PmDept(){
 		super();
 	}
-	public PmDept(PDept dept) {
-		setDeptId(dept.getDeptId());
-		setDeptName(dept.getDeptName());
-		setDeptDesc(dept.getDeptDesc());
-		setDeptLevel(dept.getDeptLevel());
-		setDeptMngId(dept.getDeptMngId());
-		setUpDeptId(dept.getUpDeptId());
-		setDeptState(dept.getDeptState());
-		setCreaterId(dept.getCreaterId());
-		setCreateTime(dept.getCreateTime());
-		setUpdaterId(dept.getUpdaterId());
-		setUpdateTime(dept.getUpdateTime());
+	public PmDept(PDept faObj) {
+		ReflectUtils.setChildPo(this,faObj);
 	}
 }

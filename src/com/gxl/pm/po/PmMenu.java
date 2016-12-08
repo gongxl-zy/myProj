@@ -4,9 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.gxl.common.Cache;
+import com.gxl.common.ReflectUtils;
 import com.gxl.entity.PMenu;
 
-public class PmMenu extends PMenu{
+public class PmMenu extends PMenu implements Cloneable{
 	private static final long serialVersionUID = 6482497776873318761L;
 	private String roleId;//角色ID
 	private String state;//角色的权限状态0-未开启；1-已开启
@@ -26,21 +27,17 @@ public class PmMenu extends PMenu{
 	public PmMenu(){
 		super();
 	}
-	public PmMenu(PMenu menu) {
-		setMenuId(menu.getMenuId());
-		setMenuName(menu.getMenuName());
-		setMenuType(menu.getMenuType());
-		setMenuProp(menu.getMenuProp());
-		setMenuSort(menu.getMenuSort());
-		setMenuState(menu.getMenuState());
-		setUpMenuId(menu.getUpMenuId());
-		setMenuIcon(menu.getMenuIcon());
-		setMenuLink(menu.getMenuLink());
-		setMenuDesc(menu.getMenuDesc());
-		setCreaterId(menu.getCreaterId());
-		setCreateTime(menu.getCreateTime());
-		setUpdaterId(menu.getUpdaterId());
-		setUpdateTime(menu.getUpdateTime());
+	public PmMenu(PMenu faObj) {
+		ReflectUtils.setChildPo(this,faObj);
+	}
+	
+	public PmMenu clone(){
+		try {
+			return (PmMenu)super.clone();
+		} catch (CloneNotSupportedException e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 	public List<PmMenu> getSubMenus() {
 		return subMenus;

@@ -11,10 +11,10 @@ import org.springframework.stereotype.Service;
 import com.gxl.biz.RefreshCacheBiz;
 import com.gxl.biz.RoleBiz;
 import com.gxl.common.Constants;
+import com.gxl.common.ReflectUtils;
 import com.gxl.common.StringUtils;
 import com.gxl.dao.PublicDao;
 import com.gxl.entity.PRole;
-import com.gxl.pm.po.NewEntity;
 import com.gxl.pm.po.PmRole;
 
 @Service(value="roleBiz")
@@ -42,7 +42,8 @@ public class RoleBizImpl implements RoleBiz{
 	
 	@Override
 	public void txOpRole(PmRole role,String operSign,String opUserId) throws Exception{
-		PRole pRole = NewEntity.getPRole(role);
+		//根据子类获取全新的父类对象
+		PRole pRole = (PRole) ReflectUtils.getFatherPo(role);
 		if(operSign.equals(Constants.OP_A)){
 			pRole.setRoleId(Uuid.build());
 			pRole.setCreaterId(opUserId);

@@ -12,10 +12,10 @@ import com.gxl.biz.DeptBiz;
 import com.gxl.biz.RefreshCacheBiz;
 import com.gxl.common.Cache;
 import com.gxl.common.Constants;
+import com.gxl.common.ReflectUtils;
 import com.gxl.common.StringUtils;
 import com.gxl.dao.PublicDao;
 import com.gxl.entity.PDept;
-import com.gxl.pm.po.NewEntity;
 import com.gxl.pm.po.PmDept;
 
 @Service(value="deptBiz")
@@ -25,7 +25,8 @@ public class DeptBizImpl implements DeptBiz{
 	
 	@Override
 	public void txOpDept(PmDept dept,String operSign,String opUserId) throws Exception{
-		PDept pDept = NewEntity.getPDept(dept);
+		//根据子类获取全新的父类对象
+		PDept pDept = (PDept) ReflectUtils.getFatherPo(dept);
 		if(operSign.equals(Constants.OP_A)){
 			pDept.setDeptId(Uuid.build());
 			pDept.setCreaterId(opUserId);

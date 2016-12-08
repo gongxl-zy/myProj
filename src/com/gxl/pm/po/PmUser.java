@@ -1,6 +1,7 @@
 package com.gxl.pm.po;
 
 import com.gxl.common.Cache;
+import com.gxl.common.ReflectUtils;
 import com.gxl.entity.PUser;
 
 public class PmUser extends PUser{
@@ -24,24 +25,8 @@ public class PmUser extends PUser{
 	public PmUser(){
 		super();
 	}
-	public PmUser(PUser user){
-		super();
-		setUserId(user.getUserId());
-		setUserNo(user.getUserNo());
-		setUserPwd(user.getUserPwd());
-		setUserName(user.getUserName());
-		setRoleId(user.getRoleId());
-		setDeptId(user.getDeptId());
-		setUserLevel(user.getUserLevel());
-		setUserPhone(user.getUserPhone());
-		setUserEmail(user.getUserEmail());
-		setUserState(user.getUserState());
-		setIsOnline(user.getIsOnline());
-		setOnlineIp(user.getOnlineIp());
-		setCreaterId(user.getCreaterId());
-		setCreateTime(user.getCreateTime());
-		setUpdaterId(user.getUpdaterId());
-		setUpdateTime(user.getUpdateTime());
+	public PmUser(PUser faObj){
+		ReflectUtils.setChildPo(this,faObj);
 	}
 	
 	public String getOldPwd() {
