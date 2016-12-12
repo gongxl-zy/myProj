@@ -7,6 +7,8 @@ var registerDiv = $("registerDiv");//注册div
 var loginDiv = $("loginDiv");//登录div
 var showPart = $("showPart");//会员展示窗口
 var webUrlsPart = $("webUrlsPart");//网站链接窗口
+var frdUrlsPart = $("frdUrlsPart");//友情链接窗口
+var ptnUrlsPart = $("ptnUrlsPart");//合作伙伴链接窗口
 /**
  * 创建顶部导航栏
  * @param {Object} actSign
@@ -71,4 +73,12 @@ function pushWebUrl(desc,webUrl,num){
 		htmlCode = '<a class="rightBorder" href="'+webUrl+'"><span>'+desc+'</span></a>';
 	}
 	webUrlsPart.innerHTML = webUrlsPart.innerHTML + htmlCode;
+}
+function pushFrdUrl(desc,frdUrl,num){
+	var htmlCode = '<a href="'+frdUrl+'"><span>'+desc+'</span></a>';;
+	frdUrlsPart.innerHTML = frdUrlsPart.innerHTML + htmlCode;
+}
+function pushPtnUrl(desc,frdUrl,num){
+	var htmlCode = '<a href="'+frdUrl+'"><span>'+desc+'</span></a>';;
+	ptnUrlsPart.innerHTML = ptnUrlsPart.innerHTML + htmlCode;
 }

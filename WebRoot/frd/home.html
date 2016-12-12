@@ -98,7 +98,18 @@
 			<div class="showPart" id="showPart"></div>
 			<div class="webUrlsPart" id="webUrlsPart">
 			</div>
+			<div class="frdUrlsPart">
+				<div id="frdUrlsPart">
+					<span>友情链接：</span>
+				</div>
+			</div>
+			<div class="ptnUrlsPart">
+				<div id="ptnUrlsPart">
+					<span>合作伙伴：</span>
+				</div>
+			</div>
 		</div>
+		<div class="splitLine"></div>
 		<script src="js/home.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			window.onload = function(){
@@ -111,6 +122,12 @@
 				}
 				for(var i = 0; i < 30; i ++){
 					pushWebUrl('北京交友网','home.html',i);
+				}
+				for(var i = 0; i < 10; i ++){
+					pushFrdUrl('58同城网','home.html',i);
+				}
+				for(var i = 0; i < 10; i ++){
+					pushPtnUrl('58同城网','home.html',i);
 				}
 			};
 		</script>
