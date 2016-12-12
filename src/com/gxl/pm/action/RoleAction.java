@@ -31,7 +31,7 @@ public class RoleAction extends BasePmAction{
 		return role;
 	}
 	
-	@Action(value = "init", results = {@Result(name = "success", location = "/pm/system/role.jsp")})
+	@Action(value = "", results = {@Result(name = "success", location = "/pm/system/role.jsp")})
 	public String init(){
 		return SUCCESS;
 	}

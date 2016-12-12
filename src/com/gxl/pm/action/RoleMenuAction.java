@@ -28,7 +28,7 @@ public class RoleMenuAction extends BasePmAction{
 		return menu;
 	}
 	
-	@Action(value = "init", results = {@Result(name = "success", location = "/pm/system/roleMenu.jsp")})
+	@Action(value = "", results = {@Result(name = "success", location = "/pm/system/roleMenu.jsp")})
 	public String init(){
 		return SUCCESS;
 	}

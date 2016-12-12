@@ -5,6 +5,7 @@ var registerLi = $("registerLi");//注册标签
 var loginLi = $("loginLi");//登录标签
 var registerDiv = $("registerDiv");//注册div
 var loginDiv = $("loginDiv");//登录div
+var showPart = $("showPart");//会员展示窗口
 /**
  * 创建顶部导航栏
  * @param {Object} actSign
@@ -54,4 +55,9 @@ function setCheck(name,value){
             break;
         }
     }
+}
+function pushMember(imgUrl,nickName,info1,info2,mbrUrl){
+	var htmlCode = '<div class="showMember"><img src="'+imgUrl+'"/><div class="showInfo"><span>'+nickName+'</span>';
+	htmlCode = htmlCode + '<span>'+info1+'</span><span>'+info2+'</span><a href="'+mbrUrl+'">去看看</a></div></div>';
+	showPart.innerHTML = showPart.innerHTML + htmlCode;
 }

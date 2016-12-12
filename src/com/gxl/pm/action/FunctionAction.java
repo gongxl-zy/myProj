@@ -30,7 +30,7 @@ public class FunctionAction extends BasePmAction{
 		return function;
 	}
 	
-	@Action(value = "init", results = {@Result(name = "success", location = "/pm/system/function.jsp")})
+	@Action(value = "", results = {@Result(name = "success", location = "/pm/system/function.jsp")})
 	public String init(){
 		return SUCCESS;
 	}

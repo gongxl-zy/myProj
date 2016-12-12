@@ -40,14 +40,14 @@ public class LoginAction extends BasePmAction{
 		return user;//模型驱动
 	}
 	
-	@Action(value = "init", results = {@Result(name = "success", location = "/pm/frame/login.jsp")})
+	@Action(value = "", results = {@Result(name = "success", location = "/pm/frame/login.jsp")})
 	public String init(){
 		return SUCCESS;//页面初始化
 	}
 	
 	@Action(value = "index", results = {
 			@Result(name = "success", location = "/pm/frame/mainframe.jsp"),
-			@Result(name = "error", type="redirectAction", location = "init") })
+			@Result(name = "error", type="redirect", location = "") })
 	public String index(){//进入主页
 		PUser u = (PUser) getSession().getAttribute(Constants.PM_USER);
 		if(u == null){
@@ -70,7 +70,7 @@ public class LoginAction extends BasePmAction{
 	}
 	
 	@Action(value = "login", results = { 
-			@Result(name = "success", type="redirectAction", location = "index"),
+			@Result(name = "success", type="redirect", location = "index"),
 			@Result(name = "error", location = "/pm/frame/login.jsp") })
 	public String login() {//登陆入口
 		PUser u = null;

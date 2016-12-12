@@ -30,7 +30,7 @@ public class DeptAction extends BasePmAction{
 		return dept;
 	}
 	
-	@Action(value = "init", results = {@Result(name = "success", location = "/pm/system/dept.jsp")})
+	@Action(value = "", results = {@Result(name = "success", location = "/pm/system/dept.jsp")})
 	public String init(){
 		return SUCCESS;
 	}

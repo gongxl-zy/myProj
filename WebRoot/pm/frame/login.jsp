@@ -11,7 +11,7 @@
 <body>
 <div class="container">
 	<section id="content">
-		<form action="login.do" method="post">
+		<form action="login" method="post">
 			<h1>欢迎登陆</h1>
 			<div>
 				<input type="text" placeholder="用户名" required="required" id="username" value="${userNo}" name="userNo" />

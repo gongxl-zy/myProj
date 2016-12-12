@@ -31,7 +31,7 @@ public class UserAction extends BasePmAction{
 		return user;
 	}
 	
-	@Action(value = "init", results = {@Result(name = "success", location = "/pm/system/user.jsp")})
+	@Action(value = "", results = {@Result(name = "success", location = "/pm/system/user.jsp")})
 	public String init(){
 		return SUCCESS;
 	}

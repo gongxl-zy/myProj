@@ -31,7 +31,7 @@ public class MenuAction extends BasePmAction{
 		return menu;
 	}
 	
-	@Action(value = "init", results = {@Result(name = "success", location = "/pm/system/menu.jsp")})
+	@Action(value = "", results = {@Result(name = "success", location = "/pm/system/menu.jsp")})
 	public String init(){
 		// 存入到Session中
 		getSession().setAttribute(Constants.FUNC_LIST, Cache.funcList);
