@@ -6,6 +6,7 @@ var loginLi = $("loginLi");//登录标签
 var registerDiv = $("registerDiv");//注册div
 var loginDiv = $("loginDiv");//登录div
 var showPart = $("showPart");//会员展示窗口
+var webUrlsPart = $("webUrlsPart");//网站链接窗口
 /**
  * 创建顶部导航栏
  * @param {Object} actSign
@@ -60,4 +61,14 @@ function pushMember(imgUrl,nickName,info1,info2,mbrUrl){
 	var htmlCode = '<div class="showMember"><img src="'+imgUrl+'"/><div class="showInfo"><span>'+nickName+'</span>';
 	htmlCode = htmlCode + '<span>'+info1+'</span><span>'+info2+'</span><a href="'+mbrUrl+'">去看看</a></div></div>';
 	showPart.innerHTML = showPart.innerHTML + htmlCode;
+}
+function pushWebUrl(desc,webUrl,num){
+	var htmlCode;
+	if ((num+1) % 10 == 0){
+		/*htmlCode = '<a href="'+webUrl+'">'+desc+'</a>';*/
+		htmlCode = '<a href="'+webUrl+'"><span>'+desc+'</span></a>';
+	}else{
+		htmlCode = '<a class="rightBorder" href="'+webUrl+'"><span>'+desc+'</span></a>';
+	}
+	webUrlsPart.innerHTML = webUrlsPart.innerHTML + htmlCode;
 }
