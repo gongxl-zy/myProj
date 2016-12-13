@@ -47,6 +47,6 @@
 		<div class="hover" id="registerTab" onmouseover="nowtab(1)"><span >注册</span></div>
 		<div id="loginTab" onmouseover="nowtab(2)"><span>登录</span></div>
 	</div>
-	<jsp:include page="registerDiv.jsp"/>
-	<jsp:include page="loginDiv.jsp"/>
+	<jsp:include page="login/registerDiv.jsp"/>
+	<jsp:include page="login/loginDiv.jsp"/>
 </div>

@@ -25,7 +25,7 @@
 			<jsp:include page="divPart/frdUrlsPartDiv.jsp"/>
 			<jsp:include page="divPart/ptnUrlsPartDiv.jsp"/> --%>
 			<jsp:include page="divPart/leftNavPartDiv.jsp"/>
-			<jsp:include page="divPart/rightContentPartDiv.jsp"/>
+			<jsp:include page="divPart/rightContPartDiv.jsp"/>
 		</div>
 		<div class="splitLine"></div>
 		<script src="frdCommon.js" type="text/javascript" charset="utf-8"></script>
