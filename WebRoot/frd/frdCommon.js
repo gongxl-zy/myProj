@@ -1,8 +1,8 @@
 function $(id){
 	return document.getElementById(id);
 }
-var registerLi = $("registerLi");//注册标签
-var loginLi = $("loginLi");//登录标签
+var registerTab = $("registerTab");//注册标签
+var loginTab = $("loginTab");//登录标签
 var registerDiv = $("registerDiv");//注册div
 var loginDiv = $("loginDiv");//登录div
 var showPart = $("showPart");//会员展示窗口
@@ -23,13 +23,13 @@ function getNavTop(){
  */
 function nowtab(sign){
 	if(sign == 1){
-		registerLi.className="hover";
-		loginLi.className="";
+		registerTab.className="hover";
+		loginTab.className="";
 		registerDiv.className="login";
 		loginDiv.className="hideDiv";
 	}else{
-		registerLi.className="";
-		loginLi.className="hover";
+		registerTab.className="";
+		loginTab.className="hover";
 		registerDiv.className="hideDiv";
 		loginDiv.className="login";
 	}
