@@ -7,9 +7,6 @@
 	background-color: white;
 	float: left;
 }
-.leftNavPart div{
-float:none;
-}
 .selfShow{
 	width:120px;
 	height: 270px;
@@ -72,6 +69,38 @@ float:none;
 	font-size: 18px;
 	padding-top: 5px;
 }
+.navTitle{
+	width: 100%;
+	height: auto;
+}
+.titleLine{
+	width: 80%;
+	margin:5px auto;
+	border-left: 3px solid red;
+	padding-left: 5px;
+}
+.servLink{
+	font-size: .9em;
+	width: 80%;
+	margin: auto;
+	height: 60px;
+}
+.servLink div{
+	margin-top: 6px;
+}
+.servLink a{
+	width: 80%;
+	margin:5px auto;
+}
+.servLink a:hover{
+	text-decoration:underline;
+}
+.relateLink{
+	font-size: .9em;
+	width: 80%;
+	height: 60px;
+	margin: auto;
+}
 </style>
 <div class="leftNavPart">
 	<div class="selfShow">
@@ -91,7 +120,25 @@ float:none;
 	<div class="goldNum">
 		<div>金币：0<a href="">充值</a></div>		
 	</div>
-	<div class="borderLine"></div>
+	<div class="w100 sltop l10px lgray"></div>
 	<a class="emailUrl" href="frdCommon.jsp">私信（4封）</a>
 	<div class="borderLine"></div>
+	<div class="navTitle">
+		<div class="titleLine">我的服务</div>
+		<div class="servLink">
+			<div class="gxlLeft">[<a href="frdCommon.jsp">写信包月</a>]</div>
+			<div class="gxlRight">[<a href="frdCommon.jsp">金币充值</a>]</div>
+			<div class="gxlLeft">[<a href="frdCommon.jsp">抢镜头</a>]</div>
+		</div>
+	</div>
+	<div class="borderLine"></div>
+	<div class="navTitle">
+		<div class="titleLine">我的有缘</div>
+		<div class="relateLink">
+			<div class="gxlLeft">[<a href="frdCommon.jsp">写信包月</a>]</div>
+			<div class="gxlRight">[<a href="frdCommon.jsp">金币充值</a>]</div>
+			<div class="gxlLeft">[<a href="frdCommon.jsp">抢镜头</a>]</div>
+		</div>
+	</div>
+	<div class="w100 sltop l5px lgray"></div>
 </div>
