@@ -39,7 +39,7 @@ public class LoginAction extends BasePmAction{
 		return user;//模型驱动
 	}
 	
-	@Action(value = "", results = {@Result(name = "success", location = "/frd/frdCommon.jsp")})
+	@Action(value = "", results = {@Result(name = "success", location = "/frd/index.jsp")})
 	public String init(){
 		return SUCCESS;//页面初始化
 	}

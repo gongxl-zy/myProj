@@ -1,0 +1,145 @@
+/* -------------------页头------------------- */ 
+/* 页头最外围样式 */
+.header{
+	float:left;
+	width: 100%;
+	height: 50px;
+	background-color: #FF00FF;
+	z-index: 999;
+}
+/* 页头居中的导航条样式 */
+.topnav{
+	width: 1000px;
+	margin: auto;
+	height: 50px;
+	font-size: 1.3em;
+}
+/* 顶部导航链接字体样式 */
+.topnav a{
+	color:white;
+}
+.topnav a:hover{
+	background-color: #FF80FF;
+}
+/* 页头导航最左侧的logo标志 */
+.topnav .logo{
+	padding-top: 4px;
+	height: 80%;
+	float: left;
+	margin-right: 30px;
+}
+/* 页头导航主菜单 */
+.topnav .mainmenu{
+	display:block;
+	float: left;
+	height: 78%;
+	width: 80px;
+	padding-top:11px;
+	padding-left:10px;
+	border-radius:15px;
+}
+/* 页头导航当前的激活页面 */
+.topnav .selected{
+	background-color: #FF80FF;
+}
+/* 页头导航主菜单的图标 */
+.topnav span{
+	display:block;
+	margin-right:4px;
+	float:left;
+	width:23px;
+	height:23px;
+}
+/* 页头导航副菜单 */
+.topnav .submenu{
+	display:block;
+	float: right;
+	font-size: 0.7em;
+	height: 73%;
+	width: 36px;
+	padding-top:13px;
+	padding-left:5px;
+}
+/* -------------------页面内容------------------- */
+/* 页面内容最外围样式 */
+.container{
+	width: 1000px;
+	margin: auto;
+}
+/* 页面内容中所有div默认向左浮动？ */
+.container div{
+	float:left;
+}
+
+/* ----页面内容上部左侧广告/标语IMG---- */
+.banner{
+	height: 400px;
+	width: 60%;
+	margin-top: 5px;
+	float:left;
+}
+/* ----页面内容上部右侧登录注册栏---- */
+/* 登录注册栏最外围 */
+.loginbar{
+	height: 400px;
+	width: 39.5%;
+	margin-top: 5px;
+	margin-left: 5px;
+}
+/* 登录注册栏上部登录/注册选择器最外围 */
+.tabmenu{
+	width: 100%;
+	height: 30px;
+}
+/* 登录注册栏上部登录/注册选项正常状态 */
+.tabmenu div{
+	height: 30px;
+	width: 50%;
+	float: left;
+	background-color: #F5F5F5;
+	text-align:center;
+	padding-top:6px;
+}
+/* 登录注册栏上部登录/注册选项选中状态 */
+.tabmenu .hover{
+	background-color: white;
+}
+/* 不包括选择器的登录/注册栏（待优化） */
+.login{
+	width: 100%;
+	height: 370px;
+	background-color: white;
+}
+/* 登录表单 */
+.login form{
+	margin-left: 50px;
+}
+/* 登录单元格 */
+.login td{
+	padding-top: 10px;
+}
+/* ----页面内容中部整行的搜索栏---- */
+/* 搜索栏外围（白底） */
+.search{
+	width: 100%;
+	height: 40px;
+	background-color: white;
+	margin-top: 8px;
+	float: left;
+}
+/* 搜索栏最左侧图标 */
+.search span{
+	float: left;
+	height:25px;
+	width:25px;
+	margin:7px 4px 7px 15px;
+}
+/* 搜索栏表单 */
+.search form{
+	float: left;
+	margin-top: 8px;
+}
+/* 搜索栏选择框 */
+.search form select{
+	margin-right: 10px;
+}

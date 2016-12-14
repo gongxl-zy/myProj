@@ -7,6 +7,9 @@
 	background-color: white;
 	float: left;
 }
+.leftNavPart div{
+float:none;
+}
 .selfShow{
 	width:120px;
 	height: 270px;

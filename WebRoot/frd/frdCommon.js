@@ -3,8 +3,8 @@ function $(id){
 }
 var registerTab = $("registerTab");//注册标签
 var loginTab = $("loginTab");//登录标签
-var registerDiv = $("registerDiv");//注册div
-var loginDiv = $("loginDiv");//登录div
+var register = $("register");//注册div
+var login = $("login");//登录div
 var showPart = $("showPart");//会员展示窗口
 var webUrlsPart = $("webUrlsPart");//网站链接窗口
 var frdUrlsPart = $("frdUrlsPart");//友情链接窗口
@@ -25,13 +25,13 @@ function nowtab(sign){
 	if(sign == 1){
 		registerTab.className="hover";
 		loginTab.className="";
-		registerDiv.className="login";
-		loginDiv.className="hideDiv";
+		register.className="login";
+		login.className="hide";
 	}else{
 		registerTab.className="";
 		loginTab.className="hover";
-		registerDiv.className="hideDiv";
-		loginDiv.className="login";
+		register.className="hide";
+		login.className="login";
 	}
 }
 
@@ -51,7 +51,7 @@ function addOption(obj,text,value){
 	obj.add(op);
 }
 function setCheck(name,value){
-	var rs = document.getElementsByName("a1");
+	var rs = document.getElementsByName(name);
 	for(var i =0;i<rs.length;i++){
         if(rs[i].value == value){
             rs[i].checked=true;
