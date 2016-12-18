@@ -1,0 +1,62 @@
+域名：
+duomiw.com
+购买日期：
+2016/12/17
+购买期限：
+1年
+OSS资源包：
+FP-2hu4a1iy0
+
+云服务器 ECS：
+计费模式：包年包月地域：华北 2（随机分配）
+实例规格：实例（-）I/O 优化：-网络：带宽 1Mbps（专有网络）镜像：
+系统盘：高效云盘（40 GB）数据盘： 20GB购买量：6 个月1 台
+
+免费试用6月版
+设置密码：
+Duomi1990
+实例名称：
+多米云服务器
+
+实例ID:i-2ze9tsitrkvxcz4580nu
+实例名称:多米云服务器 
+公网IP：60.205.179.90
+内网IP：172.17.252.195
+
+mysql初始账户密码：
+root	q.iqaZ9FbXn_
+
+GRANT ALL PRIVILEGES ON *.* TO root@'%' identified by 'mysql';
+
+mysql -uroot -p
+mysql -uroot -pmysql
+
+SET PASSWORD = PASSWORD('mysql');
+
+启动mysql数据库：
+/etc/init.d/mysql start
+service mysqld start
+关闭mysql数据库：
+/etc/init.d/mysql stop
+service mysqld stop
+
+chmod 755 /etc/init.d/mysqld
+
+sh /usr/local/tomcat/bin/shutdown.sh
+
+sh /usr/local/tomcat/bin/startup.sh
+
+查看tomcat进程
+
+ps -aux | grep tomcat
+
+根据进程查看端口号
+
+netstat -naop | grep 22078
+
+export JAVA_HOME=/usr/local/jdk
+export CLASSPATH=.:%JAVA_HOME%/lib/dt.jar:%JAVA_HOME%/lib/tools.jar
+export PATH=.:$JAVA_HOME/bin:$JRE_HOME/bin:$PATH
+
+
+http://60.205.179.90:8080
