@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.gxl.frd.po.Combo;
 import com.gxl.pm.po.PmDept;
 import com.gxl.pm.po.PmFunction;
 import com.gxl.pm.po.PmMenu;
@@ -20,7 +21,8 @@ public class Cache {
 	public static List<PmRole> roleList = new ArrayList<PmRole>();
 	public static List<PmDept> deptList = new ArrayList<PmDept>();
 	public static List<PmMenu> menuList = new ArrayList<PmMenu>();
-	public static Map<String,List<String>> roleMenuMap = new HashMap<String,List<String>>();
+	public static Map<String,List<String>> roleMenuMap = new HashMap<String,List<String>>();//角色权限map
+	public static Map<String,List<Combo>> comboMap = new HashMap<String,List<Combo>>();//下拉列表map
 	
 	/**
 	 * 获取角色的菜单

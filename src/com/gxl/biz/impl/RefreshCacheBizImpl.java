@@ -1,5 +1,6 @@
 package com.gxl.biz.impl;
 
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,6 +16,7 @@ import com.gxl.entity.PMenu;
 import com.gxl.entity.PRole;
 import com.gxl.entity.PRoleMenu;
 import com.gxl.entity.PUser;
+import com.gxl.frd.po.Combo;
 import com.gxl.pm.po.PmDept;
 import com.gxl.pm.po.PmFunction;
 import com.gxl.pm.po.PmMenu;
@@ -68,7 +70,6 @@ public class RefreshCacheBizImpl implements RefreshCacheBiz{
 	@Override
 	public void refreshFuncCache() throws Exception{
 		Cache.funcMap.clear();
-		/*	刷新菜单名	*/
 		List<Object> list = publicDao.selectListByHql("from PFunction order by funcSort");
 		for(Object obj : list){
 			PFunction temp = (PFunction)obj;
@@ -80,7 +81,6 @@ public class RefreshCacheBizImpl implements RefreshCacheBiz{
 	@Override
 	public void refreshRoleMenuCache() throws Exception{
 		Cache.roleMenuMap.clear();
-		/*	刷新菜单名	*/
 		List<Object> list = publicDao.selectListByHql("from PRoleMenu order by roleId");
 		for(Object obj : list){
 			PRoleMenu temp = (PRoleMenu)obj;
@@ -90,6 +90,25 @@ public class RefreshCacheBizImpl implements RefreshCacheBiz{
 				List<String> rmList = new ArrayList<String>();
 				rmList.add(temp.getMenuId());
 				Cache.roleMenuMap.put(temp.getRoleId(), rmList);
+			}
+		}
+	}
+
+	@Override
+	public void refreshComboCache() throws Exception {
+		Cache.comboMap.clear();
+		String sql = "select option_set,option_key,option_name,option_par from p_option order by option_set,option_key";
+		ResultSet rst = publicDao.query(sql);
+		String opSet = "";
+		while(rst.next()){
+			Combo combo = new Combo(rst.getString(2),rst.getString(3),rst.getString(4));
+			opSet = rst.getString(1);
+			if(Cache.comboMap.containsKey(opSet)){
+				Cache.comboMap.get(opSet).add(combo);
+			}else{
+				List<Combo> list = new ArrayList<Combo>();
+				list.add(combo);
+				Cache.comboMap.put(opSet, list);
 			}
 		}
 	}

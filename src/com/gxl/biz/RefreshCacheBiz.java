@@ -13,5 +13,15 @@ public interface RefreshCacheBiz {
 	 */
 	public void refreshFuncCache() throws Exception;
 	
+	/**
+	 * 角色权限map刷新
+	 * @throws Exception
+	 */
 	public void refreshRoleMenuCache() throws Exception;
+	
+	/**
+	 * 拉列表map刷新
+	 * @throws Exception
+	 */
+	public void refreshComboCache() throws Exception;
 }

@@ -49,6 +49,7 @@ public class ServerStartListener implements ServletContextListener{
 			refreshCacheBiz.refreshSysCache();
 			refreshCacheBiz.refreshFuncCache();
 			refreshCacheBiz.refreshRoleMenuCache();
+			refreshCacheBiz.refreshComboCache();
 			return true;
 		} catch (Exception e) {
 			e.printStackTrace();

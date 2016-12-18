@@ -1,5 +1,6 @@
 package com.gxl.dao.impl;
 
+import java.sql.ResultSet;
 import java.util.Iterator;
 import java.util.List;
 
@@ -84,14 +85,10 @@ public class PublicDaoImpl implements PublicDao{
 	}
 	
 	@Override
-	public void query() throws Exception{
+	public ResultSet query(String sql) throws Exception{
 		Session session = sessionFactory.getCurrentSession();
-		String sql = "select * from p_menu";
 		JdbcWork jdbcWork = new JdbcWork(sql,Constants.JDBC_QUERY);
 		session.doWork(jdbcWork);
-		while(jdbcWork.resultSet.next()){
-            System.out.println(jdbcWork.resultSet.getString(1) + "\t" +jdbcWork.resultSet.getString(2) + 
-            		"\t" + jdbcWork.resultSet.getString(3) + "\t" + jdbcWork.resultSet.getInt(7));
-        }
+		return jdbcWork.resultSet;
 	}
 }

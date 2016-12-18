@@ -1,5 +1,6 @@
 package com.gxl.dao;
 
+import java.sql.ResultSet;
 import java.util.Iterator;
 import java.util.List;
 
@@ -58,7 +59,7 @@ public interface PublicDao {
 	/**
 	 * 获取查询列表
 	 */
-	public void query() throws Exception;
+	public ResultSet query(String sql) throws Exception;
 	
 	
 }
