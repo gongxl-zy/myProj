@@ -24,4 +24,10 @@ public interface RefreshCacheBiz {
 	 * @throws Exception
 	 */
 	public void refreshComboCache() throws Exception;
+	
+	/**
+	 * 地区表map刷新
+	 * @throws Exception
+	 */
+	public void refreshAreaCache() throws Exception;
 }

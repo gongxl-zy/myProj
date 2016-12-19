@@ -23,6 +23,8 @@ public class Cache {
 	public static List<PmMenu> menuList = new ArrayList<PmMenu>();
 	public static Map<String,List<String>> roleMenuMap = new HashMap<String,List<String>>();//角色权限map
 	public static Map<String,List<Combo>> comboMap = new HashMap<String,List<Combo>>();//下拉列表map
+	public static Map<String,String> areaMap = new HashMap<String,String>();//地区代码map
+	public static Map<String,Integer> urlMap = new HashMap<String,Integer>();//链接map
 	
 	/**
 	 * 获取角色的菜单

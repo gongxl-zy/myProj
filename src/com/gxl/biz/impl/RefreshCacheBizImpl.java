@@ -10,12 +10,14 @@ import org.springframework.stereotype.Service;
 import com.gxl.biz.RefreshCacheBiz;
 import com.gxl.common.Cache;
 import com.gxl.dao.PublicDao;
+import com.gxl.entity.PArea;
 import com.gxl.entity.PDept;
 import com.gxl.entity.PFunction;
 import com.gxl.entity.PMenu;
 import com.gxl.entity.PRole;
 import com.gxl.entity.PRoleMenu;
 import com.gxl.entity.PUser;
+import com.gxl.entity.PWaitSearch;
 import com.gxl.frd.po.Combo;
 import com.gxl.pm.po.PmDept;
 import com.gxl.pm.po.PmFunction;
@@ -110,6 +112,22 @@ public class RefreshCacheBizImpl implements RefreshCacheBiz{
 				list.add(combo);
 				Cache.comboMap.put(opSet, list);
 			}
+		}
+	}
+
+	@Override
+	public void refreshAreaCache() throws Exception {
+		Cache.areaMap.clear();
+		Cache.urlMap.clear();
+		List<Object> list = publicDao.selectListByHql("from PArea order by areaCode");
+		for(Object obj : list){
+			PArea temp = (PArea)obj;
+			Cache.areaMap.put(temp.getAreaCode(), temp.getAreaName());
+		}
+		list = publicDao.selectListByHql("from PWaitSearch order by wsDepth");
+		for(Object obj : list){
+			PWaitSearch temp = (PWaitSearch)obj;
+			Cache.urlMap.put(temp.getWsUrl(), temp.getWsDepth());
 		}
 	}
 }
