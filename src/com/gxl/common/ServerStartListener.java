@@ -7,11 +7,11 @@ import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
 import com.gxl.biz.RefreshCacheBiz;
-import com.gxl.dao.PublicDao;
+import com.gxl.biz.ThreadBiz;
 
 public class ServerStartListener implements ServletContextListener{
 	private RefreshCacheBiz refreshCacheBiz;
-	private PublicDao publicDao;
+	private ThreadBiz threadBiz;
 	
 	/**
 	 * 服务退出
@@ -30,7 +30,7 @@ public class ServerStartListener implements ServletContextListener{
 		WebApplicationContext springContext = WebApplicationContextUtils.getWebApplicationContext(event.getServletContext());
 		if (springContext != null) {
 			refreshCacheBiz = (RefreshCacheBiz)springContext.getBean("refreshCacheBiz");
-			publicDao = (PublicDao)springContext.getBean("publicDao");
+			threadBiz = (ThreadBiz)springContext.getBean("threadBiz");
 		} else {
 			System.out.println("获取应用程序上下文失败!");
 			return;
@@ -54,7 +54,7 @@ public class ServerStartListener implements ServletContextListener{
 			refreshCacheBiz.refreshRoleMenuCache();
 			refreshCacheBiz.refreshComboCache();
 			refreshCacheBiz.refreshAreaCache();
-			Thread searchThread = new SearchThread(publicDao);
+			Thread searchThread = new SearchThread(threadBiz);
 			searchThread.start();
 			return true;
 		} catch (Exception e) {

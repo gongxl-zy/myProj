@@ -61,5 +61,18 @@ public interface PublicDao {
 	 */
 	public ResultSet query(String sql) throws Exception;
 	
+	/**
+	 * jdbc非查询处理
+	 * @param sql
+	 * @throws Exception
+	 */
+	public void jdbcExecute(String sql) throws Exception;
+	
+	/**
+	 * jdbc批量操作（外部控制批量上限）
+	 * @throws Exception
+	 */
+	public void jdbcExecuteBatch(String sql,Integer paramNum,List<String> paramList) throws Exception;
+	
 	
 }

@@ -16,7 +16,7 @@ public class Constants {
 
 	public static final Integer JDBC_UPDATE = 1;//更新操作
 	public static final Integer JDBC_QUERY = 2;//查询操作
-	public static final Integer JDBC_UPDATE_BATCH = 3;//批量更新操作
+	public static final Integer JDBC_BATCH = 3;//批量操作
 	
 	public static final String PM_MENU = "pmMenu";//平台菜单
 	public static final String PM_LIMIT = "pmLimit";//平台权限

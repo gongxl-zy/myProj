@@ -91,4 +91,20 @@ public class PublicDaoImpl implements PublicDao{
 		session.doWork(jdbcWork);
 		return jdbcWork.resultSet;
 	}
+
+	@Override
+	public void jdbcExecute(String sql) throws Exception {
+		Session session = sessionFactory.getCurrentSession();
+		JdbcWork jdbcWork = new JdbcWork(sql,Constants.JDBC_UPDATE);
+		session.doWork(jdbcWork);
+		
+	}
+
+	@Override
+	public void jdbcExecuteBatch(String sql,Integer paramNum,List<String> paramList) throws Exception {
+		Session session = sessionFactory.getCurrentSession();
+		JdbcWork jdbcWork = new JdbcWork(sql,Constants.JDBC_BATCH,paramNum,paramList);
+		session.doWork(jdbcWork);
+		
+	}
 }
