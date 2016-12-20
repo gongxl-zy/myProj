@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 import com.gxl.biz.RefreshCacheBiz;
 import com.gxl.common.Cache;
 import com.gxl.dao.PublicDao;
-import com.gxl.entity.PArea;
 import com.gxl.entity.PDept;
 import com.gxl.entity.PFunction;
 import com.gxl.entity.PMenu;
@@ -119,12 +118,12 @@ public class RefreshCacheBizImpl implements RefreshCacheBiz{
 	public void refreshAreaCache() throws Exception {
 		Cache.areaMap.clear();
 		Cache.urlMap.clear();
-		List<Object> list = publicDao.selectListByHql("from PArea order by areaCode");
+		/*List<Object> list = publicDao.selectListByHql("from PArea order by areaCode");
 		for(Object obj : list){
 			PArea temp = (PArea)obj;
 			Cache.areaMap.put(temp.getAreaCode(), temp.getAreaName());
-		}
-		list = publicDao.selectListByHql("from PWaitSearch order by wsDepth");
+		}*/
+		List<Object> list = publicDao.selectListByHql("from PWaitSearch order by wsDepth");
 		for(Object obj : list){
 			PWaitSearch temp = (PWaitSearch)obj;
 			Cache.urlMap.put(temp.getWsUrl(), temp.getWsDepth());

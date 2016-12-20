@@ -19,6 +19,6 @@ public class SearchThread extends Thread{
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		new AreaCodeTask(threadBiz);
+		//new AreaCodeTask(threadBiz);
 	}
 }

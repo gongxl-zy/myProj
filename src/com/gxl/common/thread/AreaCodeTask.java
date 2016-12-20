@@ -20,7 +20,7 @@ import com.gxl.common.Cache;
 public class AreaCodeTask {
 	private static Map<String,String> map = new HashMap<String,String>();
 	private static String startUrl = "http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2013/index.html";
-	private static Integer maxRecs = 1000;
+	private static Integer maxRecs = 1500;
 	private List<String> areaList;
 	private Integer times;
 	private Integer recs;
@@ -46,10 +46,32 @@ public class AreaCodeTask {
 				Thread.currentThread();
 				Thread.sleep(50);//睡眠防止卡死
 				for(String key : Cache.urlMap.keySet()){
-					times ++;
-					System.out.println("=========================第（"+times+"）次通讯,已录入"+doRecs+"条数据，url("+key+")========================");
-					doGet(key,Cache.urlMap.get(key));
-					break;
+					if(Cache.urlMap.containsValue(4)){
+						if(Cache.urlMap.get(key) ==4){
+							doGet(key);
+							break;
+						}
+					}else if(Cache.urlMap.containsValue(3)){
+						if(Cache.urlMap.get(key) ==3){
+							doGet(key);
+							break;
+						}
+					}else if(Cache.urlMap.containsValue(2)){
+						if(Cache.urlMap.get(key) ==2){
+							doGet(key);
+							break;
+						}
+					}else if(Cache.urlMap.containsValue(1)){
+						if(Cache.urlMap.get(key) ==1){
+							doGet(key);
+							break;
+						}
+					}else if(Cache.urlMap.containsValue(0)){
+						if(Cache.urlMap.get(key) ==0){
+							doGet(key);
+							break;
+						}
+					}
 				}
 				if(recs >= maxRecs){
 					System.out.println("=========================正在批量录入"+recs+"条数据========================");
@@ -63,7 +85,24 @@ public class AreaCodeTask {
 				e.printStackTrace();
 			}
 		}
+		if(recs > 0){
+			System.out.println("=========================正在批量录入"+recs+"条数据========================");
+			try {
+				threadBiz.txAddAreaCode(areaList);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			areaList.clear();
+			System.out.println("=========================全部录入成功========================");
+			doRecs = doRecs + recs;
+			recs = 0;
+		}
 		
+	}
+	private void doGet(String key){
+		times ++;
+		System.out.println("=========================第（"+times+"）次通讯,已录入"+doRecs+"条数据，url("+key+")========================");
+		doGet(key,Cache.urlMap.get(key));
 	}
 	
 	private void addAreaList(String areaCode, String areaName, String areaLevel,String areaType){
@@ -97,7 +136,7 @@ public class AreaCodeTask {
 	                    		code = nextUrl.split("\\.")[0] + "0000000000";
 	                    		if(!Cache.areaMap.containsKey(code)){
 	                    			addAreaList(code,value,"0"+depth,"");
-	                    			Cache.areaMap.put(code, value);
+	                    			//Cache.areaMap.put(code, value);
 	                    			Cache.urlMap.put(getBaseUrl(url)+nextUrl, nextDepth);
 	                    		}
 	                    	}else{
@@ -105,7 +144,7 @@ public class AreaCodeTask {
 	                    			code = map.get(nextUrl);
 	                    			if(!Cache.areaMap.containsKey(code)){
 	                    				addAreaList(code,value,"0"+depth,"");
-		                    			Cache.areaMap.put(code, value);
+		                    			//Cache.areaMap.put(code, value);
 		                    			Cache.urlMap.put(getBaseUrl(url)+nextUrl, nextDepth);
 		                    		}
 	                    		}else{
@@ -127,7 +166,7 @@ public class AreaCodeTask {
 	                	type = list.elementAt(1).getFirstChild().getText();
 	                	if(!Cache.areaMap.containsKey(code)){
 	                		addAreaList(code,value,"0"+depth,type);
-                			Cache.areaMap.put(code, value);                			
+                			//Cache.areaMap.put(code, value);                			
                 		}
 	                }
 	            }
