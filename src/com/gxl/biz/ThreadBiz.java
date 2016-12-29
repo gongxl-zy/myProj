@@ -8,4 +8,11 @@ public interface ThreadBiz {
 	 * @throws Exception
 	 */
 	public void txAddAreaCode(List<String> areaList) throws Exception;
+	
+	/**
+	 * 添加会员信息，更新链接表
+	 * @param mbrList
+	 * @throws Exception
+	 */
+	public void txAddVtlMbr(List<String> mbrList) throws Exception;
 }

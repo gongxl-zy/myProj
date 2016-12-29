@@ -66,10 +66,6 @@
 	width: 1000px;
 	margin: auto;
 }
-/* 页面内容中所有div默认向左浮动？ */
-.container div{
-	float:left;
-}
 
 /* ----页面内容上部左侧广告/标语IMG---- */
 .banner{
@@ -85,6 +81,7 @@
 	width: 39.5%;
 	margin-top: 5px;
 	margin-left: 5px;
+	float:left;
 }
 /* 登录注册栏上部登录/注册选择器最外围 */
 .tabmenu{

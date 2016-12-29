@@ -2,5 +2,6 @@
 <!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
 
 <hibernate-reverse-engineering>
-	<table-filter match-name="p_wait_search" match-catalog="mydb"></table-filter>
+	<table-filter match-name="p_member" match-catalog="mydb"></table-filter>
+	<table-filter match-name="p_mbr_info" match-catalog="mydb"></table-filter>
 </hibernate-reverse-engineering>

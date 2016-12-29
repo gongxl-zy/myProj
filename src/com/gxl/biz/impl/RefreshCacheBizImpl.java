@@ -116,17 +116,16 @@ public class RefreshCacheBizImpl implements RefreshCacheBiz{
 
 	@Override
 	public void refreshAreaCache() throws Exception {
-		Cache.areaMap.clear();
-		Cache.urlMap.clear();
-		/*List<Object> list = publicDao.selectListByHql("from PArea order by areaCode");
-		for(Object obj : list){
-			PArea temp = (PArea)obj;
-			Cache.areaMap.put(temp.getAreaCode(), temp.getAreaName());
-		}*/
+		Cache.vtlMbrIds.clear();
+		Cache.waitIds.clear();
+		ResultSet rs = publicDao.query("select mbr_id from p_mbr_info where type='2'");
+		if(rs.next()){
+			Cache.vtlMbrIds.add(rs.getString(0));
+		}
 		List<Object> list = publicDao.selectListByHql("from PWaitSearch order by wsDepth");
 		for(Object obj : list){
 			PWaitSearch temp = (PWaitSearch)obj;
-			Cache.urlMap.put(temp.getWsUrl(), temp.getWsDepth());
+			Cache.waitIds.add(temp.getWsUrl());
 		}
 	}
 }

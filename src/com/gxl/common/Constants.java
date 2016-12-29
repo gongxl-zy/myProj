@@ -33,4 +33,6 @@ public class Constants {
 	public static final String FULL_QUERY= "1";//全查询
 	public static final String SUB_QUERY = "2";//子查询
 	
+	public static final String DEF_HEAD_PIC_NAME = "head_def_pic";
+	
 }

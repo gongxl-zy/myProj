@@ -25,7 +25,29 @@ public class Cache {
 	public static Map<String,List<Combo>> comboMap = new HashMap<String,List<Combo>>();//下拉列表map
 	public static Map<String,String> areaMap = new HashMap<String,String>();//地区代码map
 	public static Map<String,Integer> urlMap = new HashMap<String,Integer>();//链接map
+	public static List<String> vtlMbrIds = new ArrayList<String>();//已录入的虚拟会员IDs
+	public static List<String> waitIds = new ArrayList<String>();//待遍历的虚拟会员IDs
 	
+	/**
+	 * 根据文本获取实际值
+	 * @param opSet  类型
+	 * @param opVal  文本值
+	 * @return 实际值
+	 */
+	public static String getKeyByVal(String opSet,String opVal){
+		String rtn = "2";
+		if(comboMap.containsKey(opSet)){
+			List<Combo> list = comboMap.get(opSet);
+			for (Combo combo : list) {
+				if(combo.getText().equals(opVal)){
+					rtn = combo.getValue();
+					break;
+				}
+			}
+		}
+		return rtn;
+	}
+
 	/**
 	 * 获取角色的菜单
 	 * @param roleId

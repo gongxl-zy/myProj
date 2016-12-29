@@ -30,4 +30,10 @@ public class ThreadBizImpl implements ThreadBiz {
 		publicDao.jdbcExecuteBatch(sql, 2, urlList);
 	}
 
+	@Override
+	public void txAddVtlMbr(List<String> mbrList) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

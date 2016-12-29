@@ -1,7 +1,7 @@
 package com.gxl.common;
 
 import com.gxl.biz.ThreadBiz;
-import com.gxl.common.thread.AreaCodeTask;
+import com.gxl.common.thread.VtlMbrTask;
 
 public class SearchThread extends Thread{
 	
@@ -16,9 +16,9 @@ public class SearchThread extends Thread{
 		try {
 			Thread.currentThread();
 			Thread.sleep(10000);//10秒后开始工作
-		} catch (InterruptedException e) {
+			new VtlMbrTask(threadBiz);
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		//new AreaCodeTask(threadBiz);
 	}
 }
