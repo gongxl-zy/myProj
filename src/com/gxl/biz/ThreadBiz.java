@@ -14,5 +14,5 @@ public interface ThreadBiz {
 	 * @param mbrList
 	 * @throws Exception
 	 */
-	public void txAddVtlMbr(List<String> mbrList) throws Exception;
+	public void txAddVtlMbr(List<String> mbrList,List<String> mbrDtList) throws Exception;
 }

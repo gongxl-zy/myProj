@@ -26,7 +26,6 @@ public class Cache {
 	public static Map<String,String> areaMap = new HashMap<String,String>();//地区代码map
 	public static Map<String,Integer> urlMap = new HashMap<String,Integer>();//链接map
 	public static List<String> vtlMbrIds = new ArrayList<String>();//已录入的虚拟会员IDs
-	public static List<String> waitIds = new ArrayList<String>();//待遍历的虚拟会员IDs
 	
 	/**
 	 * 根据文本获取实际值

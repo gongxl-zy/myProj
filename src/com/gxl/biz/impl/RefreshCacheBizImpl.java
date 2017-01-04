@@ -117,15 +117,15 @@ public class RefreshCacheBizImpl implements RefreshCacheBiz{
 	@Override
 	public void refreshAreaCache() throws Exception {
 		Cache.vtlMbrIds.clear();
-		Cache.waitIds.clear();
+		Cache.urlMap.clear();
 		ResultSet rs = publicDao.query("select mbr_id from p_mbr_info where type='2'");
-		if(rs.next()){
-			Cache.vtlMbrIds.add(rs.getString(0));
+		while(rs.next()){
+			Cache.vtlMbrIds.add(rs.getString("mbr_id"));
 		}
 		List<Object> list = publicDao.selectListByHql("from PWaitSearch order by wsDepth");
 		for(Object obj : list){
 			PWaitSearch temp = (PWaitSearch)obj;
-			Cache.waitIds.add(temp.getWsUrl());
+			Cache.urlMap.put(temp.getWsUrl(),temp.getWsDepth());
 		}
 	}
 }

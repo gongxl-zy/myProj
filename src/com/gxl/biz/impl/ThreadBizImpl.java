@@ -31,9 +31,21 @@ public class ThreadBizImpl implements ThreadBiz {
 	}
 
 	@Override
-	public void txAddVtlMbr(List<String> mbrList) throws Exception {
-		// TODO Auto-generated method stub
+	public void txAddVtlMbr(List<String> mbrList,List<String> mbrDtList) throws Exception {
+		String sql = "insert into p_mbr_info(mbr_id,mbr_name,sex,age,height,month_income,hava_house,location,native_place,weight,education,marry_status,occupation,pic_url,type,origin) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+		publicDao.jdbcExecuteBatch(sql, 16, mbrList);
+		sql = "insert into p_mbr_detail(mbr_id,need_child,can_yidi,like_type,can_sex,with_parents,best_part,hobbys,soliloquy) values(?,?,?,?,?,?,?,?,?)";
+		publicDao.jdbcExecuteBatch(sql, 9, mbrDtList);
 		
+		sql = "delete from p_wait_search";
+		publicDao.jdbcExecute(sql);
+		sql = "insert into p_wait_search values (?,?)";
+		List<String> urlList = new ArrayList<String>();
+		for(String key : Cache.urlMap.keySet()){
+			urlList.add(key);
+			urlList.add(""+Cache.urlMap.get(key));
+		}
+		publicDao.jdbcExecuteBatch(sql, 2, urlList);
 	}
 
 }
