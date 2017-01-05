@@ -35,4 +35,7 @@ public class Constants {
 	
 	public static final String DEF_HEAD_PIC_NAME = "head_def_pic";
 	
+	public static final String FRD_MBR = "frdMbr";//会员
+	public static final String FRD_LOGIN = "frdLogin";//登陆操作
+	
 }
