@@ -37,5 +37,15 @@ public class Constants {
 	
 	public static final String FRD_MBR = "frdMbr";//会员
 	public static final String FRD_LOGIN = "frdLogin";//登陆操作
+	public static final String FRD_RGST_PH = "frdPhoneRgst";//手机注册
+	public static final String FRD_RGST_EM = "frdEmailRgst";//邮箱注册
+	
+	public static final String MBR_TRUE = "1";//真实类型
+	public static final String MBR_VTL = "2";//虚拟类型
+
+	public static final String DFT_PIC_URL = "default.jpg";//虚拟类型
+	
+	public static final String UNKNOWN_ERROR = "未知错误";
+	public static final String INIT_MBR_ID = "1993092819900115";
 	
 }

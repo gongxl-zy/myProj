@@ -16,7 +16,7 @@ public class SearchThread extends Thread{
 		try {
 			Thread.currentThread();
 			Thread.sleep(10000);//10秒后开始工作
-			new VtlMbrTask(threadBiz);
+			//new VtlMbrTask(threadBiz);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

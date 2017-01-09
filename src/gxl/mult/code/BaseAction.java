@@ -20,19 +20,14 @@ import org.apache.struts2.ServletActionContext;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
-import com.opensymphony.xwork2.ModelDriven;
 
-public class BaseAction extends ActionSupport implements ModelDriven<Object>{
+public class BaseAction extends ActionSupport{
 	private static final long serialVersionUID = -5999690958076532001L;
 	
 	private String msg;//字符串消息
 	private Integer page;//页数
 	private Integer rows;//最大行数
 	
-	@Override
-	public Object getModel() {
-		return null;
-	}
 	/**
 	 * 返回json到页面
 	 * @param obj 对象
